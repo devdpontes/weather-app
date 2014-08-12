@@ -1,0 +1,118 @@
+$defaultColor: cadetBlue;
+$blue: #0095DD;
+$inputBorder: 1px solid lightgray;
+$inputColor: #777;
+
+body {
+    font-size: 16px;
+    a {
+        color: $defaultColor;
+    }
+}
+h1 {
+    font-size: 2.5em;
+    color: $defaultColor;
+    margin: 0 0 .5em 0;
+}
+h2 {
+    margin: 0;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.fade-in-down {
+    -webkit-animation: fadeInDown 1s linear;
+    animation: fadeInDown 1s linear;
+}
+.main-content {
+    padding: 2em;
+    input {
+        border: $inputBorder;
+        padding: .5em;
+        color: $inputColor;
+        font-weight: 200;
+    }
+    label {
+        font-size: 1.3em;
+        font-weight: 100;
+    }
+    .button {
+        border: 1px solid $defaultColor;
+    }
+}
+.current-location {
+    font-size: .9em;
+    font-style: italic;
+}
+.weather-locations {
+    margin-top: 3em;
+}
+.remove-location {
+    clear: left;
+    cursor: pointer;
+    display: none;
+    float: left;
+    font-size: 1.5em;
+    margin-right: .5em;
+    &.active {
+        display: block;
+    }
+}
+.location {
+    float: left;
+    margin-bottom: 1.5em;
+}
+.location-details {
+    list-style: none;
+    margin: .5em 0 0 0;
+    padding: 0;
+}
+.location-property {
+    color: $defaultColor;
+}
+.loading-spinner {
+    margin: 2em auto;
+    clear: both;
+}
+.button {
+    background: $defaultColor;
+    color: white;
+    padding: .5em;
+    border: none;
+    &.blue {
+        background: $blue;
+    }
+}
+.link-button {
+    background: none;
+    border: none;
+    color: $defaultColor;
+    cursor: pointer;
+    font-style: italic;
+}
+.delete-locations {
+    margin-bottom: 1em;
+    display: block;
+}
+.clearfix {
+    &:before, &:after {
+        content: "";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}

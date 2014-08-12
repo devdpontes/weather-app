@@ -1,0 +1,102 @@
+body {
+  font-size: 16px; }
+  body a {
+    color: cadetBlue; }
+
+h1 {
+  font-size: 2.5em;
+  color: cadetBlue;
+  margin: 0 0 0.5em 0; }
+
+h2 {
+  margin: 0; }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+.fade-in-down {
+  -webkit-animation: fadeInDown 1s linear;
+  animation: fadeInDown 1s linear; }
+
+.main-content {
+  padding: 2em; }
+  .main-content input {
+    border: 1px solid lightgray;
+    padding: 0.5em;
+    color: #777;
+    font-weight: 200; }
+  .main-content label {
+    font-size: 1.3em;
+    font-weight: 100; }
+  .main-content .button {
+    border: 1px solid cadetBlue; }
+
+.current-location {
+  font-size: 0.9em;
+  font-style: italic; }
+
+.weather-locations {
+  margin-top: 3em; }
+
+.remove-location {
+  clear: left;
+  cursor: pointer;
+  display: none;
+  float: left;
+  font-size: 1.5em;
+  margin-right: 0.5em; }
+  .remove-location.active {
+    display: block; }
+
+.location {
+  float: left;
+  margin-bottom: 1.5em; }
+
+.location-details {
+  list-style: none;
+  margin: 0.5em 0 0 0;
+  padding: 0; }
+
+.location-property {
+  color: cadetBlue; }
+
+.loading-spinner {
+  margin: 2em auto;
+  clear: both; }
+
+.button {
+  background: cadetBlue;
+  color: white;
+  padding: 0.5em;
+  border: none; }
+  .button.blue {
+    background: #0095DD; }
+
+.link-button {
+  background: none;
+  border: none;
+  color: cadetBlue;
+  cursor: pointer;
+  font-style: italic; }
+
+.delete-locations {
+  margin-bottom: 1em;
+  display: block; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+.clearfix:after {
+  clear: both; }
+
+/*# sourceMappingURL=global.css.map */

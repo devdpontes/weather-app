@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather app</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/global.css">
+    </head>
+    <body>
+        <section  data-ng-app="weatherApp" data-ng-controller="WeatherController as main" class="main-content fade-in-down">
+            <h1>Weather App</h1>
+            <label for="location-input">Insert a location</label>
+            <input type="text" id="location-input" data-ng-model="main.viewModel.locationInput" data-ng-keyup="main.inputSubmit($event, main.viewModel.locationInput)"/>
+            <button class="button" data-ng-click="main.getWeather($event, false, main.viewModel.locationInput)">Submit</button>
+            <p class="current-location" data-ng-show="main.hasGeoLocation()">or you can <button class="link-button" data-ng-click="main.getWeather($event, true)">get your current location</button></p>
+            <div class="weather-locations">
+                <button class="link-button delete-locations" data-ng-show="main.hasLocations()">Delete Locations</button>
+                <div class="messages" data-ng-show="main.viewModel.loadingError.hasError">{{main.viewModel.loadingError.message}}</div>
+                <div class="location-wrapper fade-in-down clearfix" data-ng-repeat="location in main.viewModel.locations">
+                    <div class="remove-location active" data-ng-click="main.removeLocation($event, location)">X</div>
+                    <div class="location">
+                        <h2>{{location.name}}, {{location.sys.country}}</h2>
+                        <ul class="location-details">
+                            <li><span class="location-property">Weather:</span> {{location.weather[0].main}}</li>
+                            <li><span class="location-property">Temperature:</span> {{location.main.temp}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="loading-spinner" data-ng-model="main.viewModel.loadingLocation" data-ng-show="main.viewModel.loadingLocation">Loading location...</div>
+            </div>
+        </section>
+        <!-- EXTERNAL SCRIPTS -->
+        <script src="js/angular/angular.js"></script>
+        <script src="js/global.js"></script>
+    </body>
+</html>
